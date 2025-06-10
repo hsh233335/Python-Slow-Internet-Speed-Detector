@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Ignore virtual environments (if you use one)
+# Ignore virtual environments 
 venv/
 env/
 .venv/
@@ -18,7 +18,7 @@ Thumbs.db       # Windows
 *.tmp
 *~
 
-# Ignore VS Code settings (if you use it)
+# Ignore VS Code settings 
 .vscode/
 
 # Optional: Ignore icon image if you don't want to upload it
