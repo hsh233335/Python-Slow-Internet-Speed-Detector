@@ -12,7 +12,7 @@ while True:
     try:
         # Get the speedtest object.
         sp = speedtest.Speedtest()
-    # If your internet is down, or too many requests with speedtest.net through the speedtest library.
+    # If your internet is down, or too many requests with speedtest.net through the speedtest library, a tkinter messagebox error will show.
     except (speedtest.ConfigRetrievalError, URLError, socket.gaierror):
         tkinter.messagebox.showerror("Error!", "Your speedtest couldn't be completed. \n Please check your internet and run this program again. \n Please try again after a few minutes. \n Exiting...")
         time.sleep(2)
