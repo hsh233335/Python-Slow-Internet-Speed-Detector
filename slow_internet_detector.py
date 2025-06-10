@@ -57,4 +57,5 @@ while True:
         notification.title = "Wow!: Fast Internet!"
         notification.message = f"Wow! Your internet is so fast! Your download speed is {download_speed:.2f} Mbps and your upload speed is {upload_speed:.2f} Mbps!"
         notification.send()
+    # Loop again after 3600 seconds, or 1 hour.
     time.sleep(3600)
