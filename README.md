@@ -9,6 +9,7 @@ This Python slow internet speed detector detects your **internet speed (download
 # Requirements
 **Python 3 and above, and pip.**
 **The Wi-Fi notification icon.**
+**You MUST put the Wi-Fi notification icon in the same directory as the Python program, otherwise it will not work.**
 # How do I install it?
 ## Step 1
 In your command prompt or command line, run:
