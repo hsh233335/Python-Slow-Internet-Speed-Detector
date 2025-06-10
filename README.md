@@ -16,7 +16,7 @@ In your command prompt or command line, run:
 ## Step 2
 After your **required Python libraries** are installed, run:
 ```python slow_internet_detector.py```
-to run without terminal, run:
+or to run without terminal, run:
 ```pythonw slow_internet_detector.py```
 ## Step 3
 Follow the on-screen messagebox instructions and enjoy!
