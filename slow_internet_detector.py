@@ -12,9 +12,9 @@ while True:
     try:
         # Get the speedtest object.
         sp = speedtest.Speedtest()
-    # If your internet is down, or too many requests with speedtest.net through the speedtest library, a tkinter messagebox error will show.
+    # If your internet is down, or too many requests with speedtest.net through the speedtest library.
     except (speedtest.ConfigRetrievalError, URLError, socket.gaierror):
-        tkinter.messagebox.showerror("Error!", "Your speedtest couldn't be completed. \n Please check your internet and run this program again. \n Please try again after a few minutes. \n Exiting...")
+        tkinter.messagebox.showerror("Error!", "Your speedtest couldn't be completed. \n Please check your internet and run this program again. \n Please try again after a few minutes. \n Exiting...") 
         time.sleep(2)
         break
     download_speed = sp.download() / 1_000_000
@@ -43,13 +43,17 @@ while True:
     else:
         continue
     # Sends a notification warning, if your download and upload speed is less than 20.
-    if download_speed < 20:
+    if download_speed < 20 and upload_speed < 20:
+        notification.title = "Warning: Slow Internet"
+        notification.message = f"Both your download and upload speeds are lower than 20! Download speed is {download_speed:.2f} Mbps and the upload speed is {upload_speed:.2f} Mbps."
+        notification.send()
+    elif download_speed < 20:
         notification.title = "Warning: Slow Internet!"
-        notification.message = f"Your internet download speed is lower than 20! Check your internet speed! It is {download_speed:.2f} Mbps. Another notification will be sent in 3 seconds..."
+        notification.message = f"Your internet download speed is lower than 20! Check your internet download speed! It is {download_speed:.2f} Mbps."
         notification.send()
     elif upload_speed < 20:
         notification.title = "Warning: Slow Internet"
-        notification.message = f"Your internet upload speed is lower than 20! Check your internet upload speed! It is {upload_speed:.2f} Mbps. No more notifications will be sent from now on."
+        notification.message = f"Your internet upload speed is lower than 20! Check your internet upload speed! {upload_speed:.2f} Mbps."
         notification.send()
     # Sends a tkinter messagebox and a notification if your internet speed is more than 400
     elif download_speed > 400:
